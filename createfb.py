@@ -1,6 +1,15 @@
 import os, sys, re, requests, bs4, time, random, json, string
 from bs4 import BeautifulSoup
 from datetime import datetime
+try:
+    import requests
+except ImportError:
+    os.system('pip install requests > /dev/null')
+try:
+    import bs4
+except ImportError:
+    print ('\n [×] Modul Bs4 Not installed!...\n')
+    os.system('pip install bs4')
 def convert(cok):
     __for = 'datr=' + cok['datr'] + ';' + ('sb=' + cok['sb']) + ';' + ('fr=' + cok['fr']) + ';' + ('c_user=' + cok['c_user']) + ';' + ('xs=' + cok['xs'])
     return __for
